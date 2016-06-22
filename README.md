@@ -22,7 +22,11 @@ In your cloud code, import the code. And register your first endpoint as
 following:
 
 ``` python
+import logging
 from .fb_messager import messager_handler
+
+log = logging.getLogger(__name__)
+
 
 @messager_handler('fbwebhook')
 def echo(evt, postman):

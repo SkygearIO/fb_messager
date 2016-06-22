@@ -4,15 +4,21 @@ This code snippet intended to make bot writing easy in Skygear plugin
 
 ## Usage
 
-*First* Assumed you registered at `https://portal.skygear.io`
+__First__
 
-*Second* submodule to import the source code
+Assumed you registered at `https://portal.skygear.io`
+
+__Second__
+
+Use git submodule to import the source code
 
 ```
 git submodule add https://github.com/SkygearIO/fb_messager.git fb_messager
 ```
 
-*Third* In your cloud code, import the code. And register your first endpoint as
+__Third__
+
+In your cloud code, import the code. And register your first endpoint as
 following:
 
 ``` python
@@ -28,18 +34,26 @@ def echo(evt, postman):
     log.info('Cat cannot handle')
 ```
 
-*Forth* Go to the Facebook developer console, create a new app. Add `Messenger`
-product to the App. You may follow the guide here: https://developers.facebook.com/docs/messenger-platform/quickstart/
+__Forth__
+
+Go to the Facebook developer console, create a new app. Add `Messenger`
+product to the App. You may follow the guide here:
+https://developers.facebook.com/docs/messenger-platform/quickstart/
 
 In other to verify the webhook endpoint, you need to config `FB_VERIFY`. Make it
 the same with the verify token filled in
-https://developers.facebook.com/apps/<app_id>/webhooks/ . You can do it at https://portal-staging.skygear.io/app/settings
-The adaptor will replied facebook verification correctly. The Facebook 
-`Callback URL` will be `https://<your_app_name>.skygeario.com/dbwebhook`.
+`https://developers.facebook.com/apps/<app_id>/webhooks/`. You can do it at
+https://portal-staging.skygear.io/app/settings
 
-*Fitth* To make a reply to converation works
+The adaptor will replied facebook verification correctly. The Facebook
+`Callback URL` will be `https://<your_app_name>.skygeario.com/fbwebhook`.
+
+__Fifth__
+
+To make a reply to converation works
 You notice the `messager_handler` func will receive two parameters, `evt` and 
-`psotman`. For the format of `evt` dict, you may refer to https://developers.facebook.com/docs/messenger-platform/webhook-reference
+`psotman`. For the format of `evt` dict, you may refer to
+https://developers.facebook.com/docs/messenger-platform/webhook-reference
 
 You may look into the dict, decide what to do. Save an record, or just reply a
 message. In the above message, it is just an echo. To make `postman` able to

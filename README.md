@@ -9,7 +9,7 @@ This code snippet intended to make bot writing easy in Skygear plugin
 *Second* submodule to import the source code
 
 ```
-git submodule add git@github.com:SkygearIO/fb_messager.git fb_messager
+git submodule add https://github.com/SkygearIO/fb_messager.git fb_messager
 ```
 
 *Third* In your cloud code, import the code. And register your first endpoint as
